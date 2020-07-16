@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+
+		<title>AA Email Signature Generator</title>
+
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+			integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+			crossorigin="anonymous"
+		></script>
+		<script src="https://unpkg.com/libphonenumber-js@^1.7.6/bundle/libphonenumber-max.js"></script>
+		<script src="js/mustache.js"></script>
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+
+	<body>
+		<div class="signatureWrapper">
+			<div id="signature"></div>
+		</div>
+		<div id="editor">
+			<div class="content">
+				<form id="form">
+					<!-- Name -->
+					<label for="Name">Name</label>
+					<div class="sub">
+						If your image doesn't appear please contact Tyler
+					</div>
+					<input
+						name="Name"
+						placeholder="Tyler Pearce"
+						value="Tyler Pearce"
+					/>
+
+					<!-- LinkedIn -->
+					<label for="LinkedIn">LinkedIn URL</label>
+					<input
+						name="LinkedIn"
+						type="url"
+						placeholder="https://www.linkedin.com/in/tylerpearce/"
+						value="https://www.linkedin.com/in/tylerpearce/"
+					/>
+
+					<!-- Role -->
+					<label for="Role">Role</label>
+					<input
+						name="Role"
+						placeholder="Web Developer"
+						value="Web Developer"
+					/>
+
+					<!-- Phone -->
+					<label for="Phone">Phone Number</label>
+					<div class="sub">
+						Please use (123) 456-7890 format
+					</div>
+					<input
+						name="Phone"
+						placeholder="(123) 456-7890"
+						value="(123) 456-7890"
+					/>
+
+					<!-- Link1 -->
+					<hr />
+
+					<label for="Link1Text">Link 1 Label</label>
+					<input
+						name="Link1Text"
+						placeholder="Schedule Time With Me"
+						value="Schedule Time With Me"
+					/>
+
+					<label for="Link1">Link 1 URL</label>
+					<input type="url" name="Link1" value="#" />
+
+					<!-- Link2 -->
+					<hr />
+
+					<label for="Link2Text">Link 2 Label</label>
+					<input
+						name="Link2Text"
+						placeholder="Free Trial"
+						value="Free Trial"
+					/>
+
+					<label for="Link2">Link 2 URL</label>
+					<input
+						name="Link2"
+						type="url"
+						placeholder="https://agencyanalytics.com/signup"
+						value="https://agencyanalytics.com/signup"
+					/>
+				</form>
+			</div>
+			<div class="actions">
+				<button onclick="copyToClip()">Copy signature</button>
+			</div>
+		</div>
+
+		<script src="js/script.js"></script>
+	</body>
+</html>
